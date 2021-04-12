@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MemGame.wav-312ba3ccb69dff06a77301574d845b31.sample"
+
+[deps]
+
+source_file="res://Assets/Music/MemGame.wav"
+dest_files=[ "res://.import/MemGame.wav-312ba3ccb69dff06a77301574d845b31.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

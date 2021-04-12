@@ -1,0 +1,185 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Screenshots/makefile.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Screenshots/valgrindError.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Screenshots/datExample.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Screenshots/looksRight.png" type="Texture" id=4]
+[ext_resource path="res://Assets/TeslaServer.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/DynamicFonts/SmallButtText.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Music/Intro2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/RichTextLabel.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/toGame.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Fonts/DynamicFonts/Consolas.tres" type="DynamicFont" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "TeslaShake"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TeslaServer:rect_position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -3.77362, 288.108 ), Vector2( -3.77362, 288.108 ), Vector2( 1.554, 292.384 ), Vector2( -3.77362, 288.108 ), Vector2( 1.554, 292.384 ), Vector2( -3.77362, 288.108 ), Vector2( 1.554, 292.384 ), Vector2( -3.77362, 288.108 ), Vector2( 1.554, 292.384 ), Vector2( -3.77362, 288.108 ), Vector2( 1.554, 292.384 ), Vector2( -3.77362, 288.108 ) ]
+}
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -25.1718
+margin_top = -18.3981
+margin_right = 541.828
+margin_bottom = 420.602
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 351.113
+margin_top = 278.552
+margin_right = 820.113
+margin_bottom = 442.552
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TeslaServer" type="TextureRect" parent="."]
+margin_left = -3.77362
+margin_top = 288.108
+margin_right = 375.226
+margin_bottom = 607.109
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 818.257
+margin_top = -16.018
+margin_right = 1303.26
+margin_bottom = 400.982
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+margin_left = 369.461
+margin_top = 338.326
+margin_right = 1811.46
+margin_bottom = 612.326
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TeslaShake"
+anims/TeslaShake = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 283.0
+margin_right = -203.0
+margin_bottom = -288.0
+rect_pivot_offset = Vector2( 1908.2, 82.2017 )
+color = Color( 0.25098, 0.262745, 0.301961, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+margin_right = 544.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+custom_constants/margin_top = 7
+custom_constants/margin_left = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 540.0
+margin_bottom = 248.0
+size_flags_vertical = 3
+custom_fonts/mono_font = ExtResource( 10 )
+custom_fonts/normal_font = ExtResource( 10 )
+visible_characters = 252
+text = "Oh No! It's Friday night 3/5/2021, and everyone in 240 is writing code with memory leaks on the Tesla server!!
+
+IF ONLY THEY WATCHED THE VIDEOS!!!
+
+Can you spot the memory leaks to save the server and help get the assignments submitted on time??
+
+        
+		 Pwwweeeasssseeeeee UwU??????"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 252.0
+margin_right = 544.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+custom_constants/margin_right = 24
+custom_constants/margin_top = 5
+custom_constants/margin_left = 24
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HSplitContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 520.0
+margin_bottom = 50.0
+size_flags_vertical = 3
+custom_constants/separation = 42
+dragger_visibility = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 227.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+text = "Sure"
+script = ExtResource( 9 )
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 269.0
+margin_right = 496.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+text = "Nah Fam"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -7.61
+autoplay = true
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/HBoxContainer/Button2" to="ColorRect/VBoxContainer/MarginContainer2/RichTextLabel" method="_on_Button2_pressed"]
